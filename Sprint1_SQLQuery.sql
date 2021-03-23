@@ -2,7 +2,7 @@ create database Sprint1
 
 use Sprint1
 
-create table Customer(CustomerId int Primary Key,
+create table Customer(CustomerId int constraint pk_CustomerId Primary Key,
 					  CustomerName varchar(150) not null,
 					  Gender varchar(15) not null,
 					  ContactNo char(10) not null check(ContactNo like '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),
@@ -12,8 +12,7 @@ create table Customer(CustomerId int Primary Key,
 					  [State] varchar(100) not null,
 					  Pincode char(6) not null check(Pincode like '[0-9][0-9][0-9][0-9][0-9][0-9]'))
 
-
-create table Dealer(DealerId int Primary Key,
+create table Dealer(DealerId int constraint pk_DealerId Primary Key,
 					  DealerName varchar(150) not null,
 					  CompanyName varchar(100) not null,
 					  [Address] varchar (100) not null,
@@ -22,7 +21,7 @@ create table Dealer(DealerId int Primary Key,
 					  [State] varchar(100) not null,
 					  Pincode char(6) not null check(Pincode like '[0-9][0-9][0-9][0-9][0-9][0-9]'))
 
-create table Vehicle(VehicleId int Primary Key,
+create table Vehicle(VehicleId int constraint pk_VehicleId Primary Key,
 					  VehicleName varchar(150) not null,
 					  VehicleModel varchar(100) not null,
 					  DealerId int constraint fk_Dealer_DealerId foreign key references Dealer(DealerId),
@@ -32,9 +31,9 @@ create table Vehicle(VehicleId int Primary Key,
 					  [Description] varchar(100) not null,
 					  Rating int not null check(Rating like '[1-5]'))
 
-create table Showroom(ShowroomId int Primary Key,
+create table Showroom(ShowroomId int constraint pk_ShowroomId Primary Key,
 					  [Name] varchar(150) not null,
-					  DealerId int constraint fk_Dealer_DealerId foreign key references Dealer(DealerId),
+					  DealerId int constraint fk_Dealer_Id foreign key references Dealer(DealerId),
 					  OwnerName varchar(100) not null,
 					  ContactNo char(10) not null check(ContactNo like '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),
 					  [Address] varchar (100) not null,
@@ -42,7 +41,7 @@ create table Showroom(ShowroomId int Primary Key,
 					  [State] varchar(100) not null,
 					  Pincode char(6) not null check(Pincode like '[0-9][0-9][0-9][0-9][0-9][0-9]'))
 
-create table Sales(SalesId int Primary Key,
+create table Sales(SalesId int constraint pk_SalesId Primary Key,
 					  VehicleId int constraint fk_Vehicle_VehicleId foreign key references Vehicle(VehicleId),
 					  CustomerId int constraint fk_Customer_CustomerId foreign key references Customer(CustomerId),
 					  ShowroomId int constraint fk_Showroom_ShowroomId foreign key references Showroom(ShowroomId),
