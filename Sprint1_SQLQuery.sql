@@ -48,4 +48,4 @@ create table Sales(SalesId int constraint pk_SalesId Primary Key,
 					  Cost money not null,
 					  OrderDate date not null,
 					  DeliveryDate date not null,
-					  Remarks varchar(100) not null)
+					  Remarks varchar(100))
