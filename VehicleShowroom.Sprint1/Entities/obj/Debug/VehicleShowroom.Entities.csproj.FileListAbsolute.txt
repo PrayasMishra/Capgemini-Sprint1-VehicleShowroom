@@ -1,0 +1,6 @@
+D:\Capgemini Training\OnlineVehicleShowroom_Sprint\VehicleShowroom.Sprint1\Entities\bin\Debug\Entities.dll
+D:\Capgemini Training\OnlineVehicleShowroom_Sprint\VehicleShowroom.Sprint1\Entities\bin\Debug\Entities.pdb
+D:\Capgemini Training\OnlineVehicleShowroom_Sprint\VehicleShowroom.Sprint1\Entities\obj\Debug\VehicleShowroom.Entities.csprojAssemblyReference.cache
+D:\Capgemini Training\OnlineVehicleShowroom_Sprint\VehicleShowroom.Sprint1\Entities\obj\Debug\VehicleShowroom.Entities.csproj.CoreCompileInputs.cache
+D:\Capgemini Training\OnlineVehicleShowroom_Sprint\VehicleShowroom.Sprint1\Entities\obj\Debug\Entities.dll
+D:\Capgemini Training\OnlineVehicleShowroom_Sprint\VehicleShowroom.Sprint1\Entities\obj\Debug\Entities.pdb
