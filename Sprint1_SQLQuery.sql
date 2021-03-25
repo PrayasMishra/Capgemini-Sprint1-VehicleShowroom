@@ -2,7 +2,8 @@ create database Sprint1
 
 use Sprint1
 
-create table Customer(CustomerId int identity(100,1) constraint pk_CustomerId Primary Key,
+create table Customer(Id int identity(100,1) constraint pk_Id Primary Key,
+		      CustomerId varchar(10) unique not null,
 					  CustomerName varchar(150) not null,
 					  Gender varchar(15) not null,
 					  ContactNo char(10) not null unique check(ContactNo like '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),
@@ -15,11 +16,7 @@ create table Customer(CustomerId int identity(100,1) constraint pk_CustomerId Pr
 create table Dealer(DealerId int identity(100,1) constraint pk_DealerId Primary Key,
 					  DealerName varchar(150) not null,
 					  CompanyName varchar(100) not null,
-					  [Address] varchar (100) not null,
-					  ContactNo char(10) not null unique check(ContactNo like '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),
-					  City  varchar(100) not null,
-					  [State] varchar(100) not null,
-					  Pincode char(6) not null check(Pincode like '[0-9][0-9][0-9][0-9][0-9][0-9]'))
+					  ContactNo char(10) not null unique check(ContactNo like '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'))
 
 create table Vehicle(VehicleId int identity(100,1) constraint pk_VehicleId Primary Key,
 					  VehicleName varchar(150) not null,
