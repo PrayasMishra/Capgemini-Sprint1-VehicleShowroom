@@ -2,8 +2,8 @@ create database Sprint1
 
 use Sprint1
 
-create table Customer(Id int identity(100,1) constraint pk_Id Primary Key,
-		      CustomerId varchar(10) unique not null,
+create table Customer(CustId int identity(100,1) constraint pk_Id Primary Key,
+					CustomerId varchar(10) unique not null,
 					  CustomerName varchar(150) not null,
 					  Gender varchar(15) not null,
 					  ContactNo char(10) not null unique check(ContactNo like '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),
@@ -40,7 +40,7 @@ create table Showroom(ShowroomId int identity(100,1) constraint pk_ShowroomId Pr
 
 create table Sales(SalesId int identity(100,1) constraint pk_SalesId Primary Key,
 					  VehicleId int constraint fk_Vehicle_VehicleId foreign key references Vehicle(VehicleId),
-					  CustomerId int constraint fk_Customer_CustomerId foreign key references Customer(CustomerId),
+					  CustId int constraint fk_Customer_CustId foreign key references Customer(CustId),
 					  ShowroomId int constraint fk_Showroom_ShowroomId foreign key references Showroom(ShowroomId),
 					  Cost money not null,
 					  OrderDate date not null,
