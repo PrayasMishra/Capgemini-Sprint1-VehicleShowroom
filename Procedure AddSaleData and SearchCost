@@ -13,4 +13,10 @@ as
 insert Sales(SalesId,VehicleId,CustomerId,ShowroomId,Cost,OrderDate,DeliveryDate,Remarks)
 values(@SaleId,@VehicleId,@CustId,@ShowroomId,@Cost,@OrderDate,@DeliveryDate,@Remarks)
 
+--SearchCost Procedure
+
+Create proc usp_GetCostFromVehicleId(@VehicleId int)
+as
+select Cost from Vehicle where VehicleId = @VehicleId
+
 
