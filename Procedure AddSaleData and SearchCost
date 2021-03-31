@@ -19,4 +19,17 @@ Create proc usp_GetCostFromVehicleId(@VehicleId int)
 as
 select Cost from Vehicle where VehicleId = @VehicleId
 
+--Generate Bill Procedure
+
+Create proc usp_GenerateBillDetails
+(@CustomerName varchar(150))
+as
+begin
+select
+vehicleId,CustomerName,[Name] as ShowroomName,Cost as AmountPaid,OrderDate,DeliveryDate from Sales a join Customer b
+on a.CustId = b.CustId join Showroom c on a.ShowroomId=c.ShowroomId
+where
+b.CustomerName = @CustomerName
+end
+
 
